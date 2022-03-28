@@ -1,0 +1,68 @@
+VBox {
+    -fx-background-color: #595959;
+}
+Button {
+    -fx-background-color: #424242;
+    -fx-border-style: none;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 90%;
+    -fx-font-family: Arial;
+    -fx-padding: 2 2 2 2
+}
+Label {
+    -fx-text-fill: #FFFFFF;
+}
+ToolBar {
+    -fx-background-color: #424242;
+}
+#save {
+-fx-background-color: linear-gradient(to right, #1B4965, #5FA8D3);
+}
+ImageView {
+    -fx-border-color: #62B6CB;
+    -fx-border-width: 2px;
+}
+#tintRed {
+    -fx-background-color: #FF0000;
+}
+
+#tintGreen {
+    -fx-background-color: #00FF00;
+}
+#tintBlue {
+    -fx-background-color: #0000FF;
+}
+#tintRedGray {
+    -fx-background-color: linear-gradient(to bottom, #FF0000, #595959);
+}
+#grayscale {
+    -fx-background-color: linear-gradient(to right, #000000, #FFFFFF);
+}
+#negative {
+    -fx-background-image: url(icons/negative.png);
+}
+#nuke {
+    -fx-background-image: url(icons/nuke.png);
+}
+#blur {
+    -fx-background-image: url(icons/blur.png);
+}
+#sharpen {
+    -fx-background-image: url(icons/sharpen.png);
+}
+#emboss {
+    -fx-background-image: url(icons/emboss.png);
+}
+#container {
+    -fx-background-color: #424242;
+}
+#apply {
+    -fx-font-size: 110%;
+}
+#colorLabel {
+    -fx-font-weight: bold;
+}
+TextArea {
+    -fx-control-inner-background: #424242;
+    -fx-text-fill: #FFFFFF;
+}

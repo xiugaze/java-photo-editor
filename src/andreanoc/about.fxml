@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="426.0" prefWidth="645.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextArea editable="false" prefHeight="10.0" prefWidth="645.0" text="Scuffed JavaFX Photo Editor&#10;">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </TextArea>
+      <TextArea editable="false" prefHeight="342.0" prefWidth="645.0" text="Author: Caleb Andreano (https://github.com/xiugaze)&#10;&#10;This program is a simple demonstration of image processing and editing using Java and JavaFX. It can&#10;process and perform transformations on multiple image file formats, including PNG, JPG, BMP, as well&#10;as a custom text format (.msoe) and a custom binary format (.bmsoe). Custom kernel filters&#10;can also be applied to the image, with simple transformations such as blur and sharpen provided as &#10;defuault options. This application also implements external CSS in order to imitate the look of other&#10;photo editing programs. &#10;&#10;The application was implemented from scratch over a 3-week period as a case study into GUI design, &#10;error handling, event-driven and functional programming paradigms, and simple data manipulation.">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextArea>
+   </children>
+</VBox>

@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.util.Duration?>
+<VBox fx:id="mainBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#keyCombos" prefHeight="818.0" prefWidth="1143.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="andreanoc.ImageIOController">
+   <children>
+      <ToolBar prefHeight="2.0" prefWidth="1143.0">
+        <items>
+          <Button fx:id="fileButton" mnemonicParsing="false" onAction="#showFileMenu" prefHeight="25.0" prefWidth="30" text="File">
+               <contextMenu>
+                  <ContextMenu fx:id="fileMenu">
+                    <items>
+                        <MenuItem id="Open" fx:id="open" mnemonicParsing="false" onAction="#load" text="Open (Ctrl + O)" />
+                        <MenuItem id="Save" fx:id="save" mnemonicParsing="false" onAction="#save" text="Save (Ctrl + S)" />
+                      <MenuItem id="Reload" fx:id="reload" mnemonicParsing="false" onAction="#reload" text="Reload (Ctrl + R)" />
+                    </items>
+                  </ContextMenu>
+               </contextMenu>
+            </Button>
+            <Button fx:id="viewButton" onAction="#showViewMenu" mnemonicParsing="false" prefHeight="25.0" prefWidth="30" text="View">
+               <contextMenu>
+                  <ContextMenu fx:id="viewMenu">
+                    <items>
+                        <CheckMenuItem mnemonicParsing="false" text="Show Transformations" onAction="#showLeftPanel" selected="true"/>
+                        <CheckMenuItem mnemonicParsing="false" text="Show Filter Kernel" onAction="#showRightPanel"/>
+                    </items>
+                  </ContextMenu>
+               </contextMenu></Button>
+            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="40" text="About" onAction="#showOther">
+            </Button>
+        </items>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </ToolBar>
+      <HBox prefHeight="852.0" prefWidth="1143.0">
+         <children>
+            <VBox fx:id="leftPanel" prefHeight="773.0" prefWidth="52.0">
+               <children>
+                  <HBox prefHeight="28.0" prefWidth="49.0" />
+                  <Button fx:id="redShift" id="tintRed" mnemonicParsing="false" onAction="#red" prefHeight="40.0" prefWidth="40.0">
+                      <tooltip>
+                          <Tooltip text="Tint Image Red">
+                              <showDelay>
+                                  <Duration millis="10"/>
+                              </showDelay>
+                          </Tooltip>
+                      </tooltip>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="greenShift" id="tintGreen" mnemonicParsing="false" onAction="#green" prefHeight="40.0" prefWidth="40.0">
+                      <tooltip>
+                          <Tooltip text="Tint Image Green">
+                              <showDelay>
+                                  <Duration millis="10"/>
+                              </showDelay>
+                          </Tooltip>
+                      </tooltip>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="blueShift" id="tintBlue" mnemonicParsing="false" onAction="#blue" prefHeight="40.0" prefWidth="40.0">
+                      <tooltip>
+                          <Tooltip text="Tint Image Blue">
+                              <showDelay>
+                                  <Duration millis="10"/>
+                              </showDelay>
+                          </Tooltip>
+                      </tooltip>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="redGray" id="tintRedGray" mnemonicParsing="false" onAction="#redGray" prefHeight="40.0" prefWidth="40.0">
+                      <tooltip>
+                          <Tooltip text="Red/Gray filter">
+                              <showDelay>
+                                  <Duration millis="10"/>
+                              </showDelay>
+                          </Tooltip>
+                      </tooltip>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="grayscale" id="grayscale" mnemonicParsing="false" onAction="#grayscale" prefHeight="40.0" prefWidth="40.0">
+                      <tooltip>
+                          <Tooltip text="Grayscale">
+                              <showDelay>
+                                  <Duration millis="10"/>
+                              </showDelay>
+                          </Tooltip>
+                      </tooltip>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="negative" id="negative" mnemonicParsing="false" onAction="#negative" prefHeight="40.0" prefWidth="40.0">
+                      <tooltip>
+                          <Tooltip text="Invert Colors">
+                              <showDelay>
+                                  <Duration millis="10"/>
+                              </showDelay>
+                          </Tooltip>
+                      </tooltip>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </Button>
+                   <Button fx:id="nuke" id="nuke" mnemonicParsing="false" onAction="#nukeHandler" prefHeight="40.0" prefWidth="40.0">
+                       <tooltip>
+                           <Tooltip text="NUKE!!">
+                               <showDelay>
+                                   <Duration millis="10"/>
+                               </showDelay>
+                           </Tooltip>
+                       </tooltip>
+                       <VBox.margin>
+                           <Insets bottom="5.0" left="5.0" right="5.0" />
+                       </VBox.margin>
+                       <padding>
+                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                       </padding>
+                   </Button>
+                   <Button fx:id="blur" id="blur" mnemonicParsing="false" onAction="#blurHandler" prefHeight="40.0" prefWidth="40.0">
+                       <tooltip>
+                           <Tooltip text="Blur">
+                               <showDelay>
+                                   <Duration millis="10"/>
+                               </showDelay>
+                           </Tooltip>
+                       </tooltip>
+                       <VBox.margin>
+                           <Insets bottom="5.0" left="5.0" right="5.0" />
+                       </VBox.margin>
+                       <padding>
+                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                       </padding>
+                   </Button>
+                   <Button fx:id="sharpen" id="sharpen" mnemonicParsing="false" onAction="#sharpenHandler" prefHeight="40.0" prefWidth="40.0">
+                       <tooltip>
+                           <Tooltip text="Sharpen">
+                               <showDelay>
+                                   <Duration millis="10"/>
+                               </showDelay>
+                           </Tooltip>
+                       </tooltip>
+                       <VBox.margin>
+                           <Insets bottom="5.0" left="5.0" right="5.0" />
+                       </VBox.margin>
+                       <padding>
+                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                       </padding>
+                   </Button>
+                   <Button fx:id="emboss" id="emboss" mnemonicParsing="false" onAction="#embossHandler" prefHeight="40.0" prefWidth="40.0">
+                       <tooltip>
+                           <Tooltip text="Emboss">
+                               <showDelay>
+                                   <Duration millis="10"/>
+                               </showDelay>
+                           </Tooltip>
+                       </tooltip>
+                       <VBox.margin>
+                           <Insets bottom="5.0" left="5.0" right="5.0" />
+                       </VBox.margin>
+                       <padding>
+                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                       </padding>
+                   </Button>
+               </children>
+            </VBox>
+            <VBox id="container0" fx:id="container" prefHeight="773.0" prefWidth="916.0">
+               <children>
+                  <HBox prefHeight="55.0" prefWidth="913.0">
+                     <children>
+                        <Label fx:id="filenameLabel" prefHeight="26.0" prefWidth="913.0" text="" />
+                     </children></HBox>
+                  <GridPane id="container" alignment="CENTER" prefHeight="741.0" prefWidth="913.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="296.0" minWidth="10.0" prefWidth="65.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="544.0" minWidth="10.0" prefWidth="544.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="center" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <ImageView fx:id="iv" fitHeight="448.0" fitWidth="532.0" onMouseExited="#clearColorLabel" onMouseMoved="#displayPixel" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+                  <HBox prefHeight="69.0" prefWidth="775.0">
+                     <children>
+                         <Label text="Color under Cursor: " />
+                        <Label id="colorLabel" fx:id="colorLabel" text=""/>
+                     </children></HBox>
+               </children>
+            </VBox>
+            <VBox fx:id="rightPanel" alignment="TOP_CENTER" prefHeight="773.0" prefWidth="183.0">
+               <children>
+                  <HBox prefHeight="53.0" prefWidth="181.0">
+                     <children>
+                        <TextField fx:id="field02" onMouseExited="#checkTextFields" onMouseEntered="#checkTextFields"/>
+                        <TextField fx:id="field12" onMouseExited="#checkTextFields" onMouseEntered="#checkTextFields"/>
+                        <TextField fx:id="field22" onMouseExited="#checkTextFields" onMouseEntered="#checkTextFields"/>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="57.0" prefWidth="181.0">
+                     <children>
+                        <TextField fx:id="field01" onMouseExited="#checkTextFields" onMouseEntered="#checkTextFields"/>
+                        <TextField fx:id="field11" onMouseExited="#checkTextFields" onMouseEntered="#checkTextFields"/>
+                        <TextField fx:id="field21" onMouseExited="#checkTextFields" onMouseEntered="#checkTextFields"/>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="64.0" prefWidth="181.0">
+                     <children>
+                        <TextField fx:id="field00" onMouseExited="#checkTextFields" onMouseEntered="#checkTextFields"/>
+                        <TextField fx:id="field10" onMouseExited="#checkTextFields" onMouseEntered="#checkTextFields"/>
+                        <TextField fx:id="field20" onMouseExited="#checkTextFields" onMouseEntered="#checkTextFields"/>
+                     </children>
+                  </HBox>
+                  <Button mnemonicParsing="false" fx:id="apply" id="apply" onAction="#applyHandler" text="Apply Kernel Filter"/>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>
